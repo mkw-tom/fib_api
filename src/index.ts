@@ -26,7 +26,7 @@ app.get("/fib", (req: Request, res: Response) => {
 	if (String(n).match(/[0]*/) && String(n).match(/[1-9]/g) === null) {
 		return res
 			.status(400)
-			.send('"A value of 0 or non-alphanumeric characters is invalid.');
+			.send("A value of 0 or non-alphanumeric characters is invalid.");
 	}
 
 	// ----------- n番目までのフィボナッチ数列を求める反復処理 -----------
@@ -58,3 +58,5 @@ app.get("/fib", (req: Request, res: Response) => {
 app.listen(port, () => {
 	console.log("サーバーが立ち上がっています");
 });
+
+export default app;
