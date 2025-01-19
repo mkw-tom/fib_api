@@ -1,5 +1,5 @@
-import { Request, Response } from "express"
-const router = require('express').Router()
+import type { Request, Response } from "express";
+const router = require("express").Router();
 router.get("/", (req: Request, res: Response) => {
 	const { n } = req.query;
 	const fib_arr: bigint[] = [];
@@ -51,4 +51,4 @@ router.get("/", (req: Request, res: Response) => {
 	return res.status(200).send({ result: String(result) });
 });
 
-module.exports = router
+module.exports = router;
