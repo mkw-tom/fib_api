@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "biome lint <files>",
+    "format": "biome format <files>",
+    "check": "biome check <files>",
+    "lint:fix": "biome lint --apply <files>",
+    "format:fix": "biome format <files> --write",
+    "check:fix": "biome check --apply <files>"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +19,9 @@
     "express": "^4.21.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@types/node": "^22.10.7",
+    "lefthook": "^1.10.8",
     "typescript": "^5.7.3"
   }
 }
