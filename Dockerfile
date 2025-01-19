@@ -11,13 +11,18 @@ ARG NODE_VERSION=20.17.0
 FROM node:${NODE_VERSION}-alpine
 
 # Use production node environment by default.
-ENV NODE_ENV production
-
+# ENV NODE_ENV production
 
 WORKDIR /app
 
+
 COPY package.json package-lock.json nodemon.json ./
-RUN npm install && npm install -g nodemon && npm install -g ts-node 
+RUN npm install 
+
+COPY tsconfig.json ./
+COPY src ./src
+
+RUN npx tsc
 
 # Download dependencies as a separate step to take advantage of Docker's caching.
 # Leverage a cache mount to /root/.npm to speed up subsequent builds.
@@ -39,4 +44,6 @@ COPY . .
 EXPOSE 8000
 
 # Run the application.
-CMD npm run dev
+CMD ["npm", "run", "start"]
+
+
