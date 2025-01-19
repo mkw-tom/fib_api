@@ -13,7 +13,7 @@ app.use(express.json());
 // ---------- フィボナッチ関数を返すAPI --------
 app.use("/fib", fibRouter);
 
-app.listen(port, host, () => {
+app.listen(port, host || "0.0.0.0", () => {
 	console.log(`サーバーが立ち上がっています${port}`);
 });
 
