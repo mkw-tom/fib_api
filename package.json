@@ -3,13 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "biome lint <files>",
-    "format": "biome format <files>",
-    "check": "biome check <files>",
-    "lint:fix": "biome lint --apply <files>",
-    "format:fix": "biome format <files> --write",
-    "check:fix": "biome check --apply <files>"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
