@@ -27,10 +27,10 @@ WORKDIR /app
 COPY package.json package-lock.json nodemon.json ./
 RUN npm install 
 
-RUN --mount=type=bind,source=package.json,target=package.json \
---mount=type=bind,source=package-lock.json,target=package-lock.json \
---mount=type=cache,target=/root/.npm \
-npm ci --omit=dev
+# RUN --mount=type=bind,source=package.json,target=package.json \
+# --mount=type=bind,source=package-lock.json,target=package-lock.json \
+# --mount=type=cache,target=/root/.npm \
+# npm ci --omit=dev
 COPY tsconfig.json ./
 
 COPY src ./src
@@ -43,7 +43,7 @@ COPY . .
 
 
 # Expose the port that the application listens on.
-EXPOSE 8000
+# EXPOSE 8000
 
 # Run the application.
 CMD ["npm", "start"]
