@@ -14,7 +14,7 @@ app.use(express.json());
 app.use("/fib", fibRouter);
 
 app.listen(port, host || "0.0.0.0", () => {
-	console.log(`サーバーが立ち上がっています${port}`);
+	console.log(`サーバーが立ち上がっています${port}, host:${host}`);
 });
 
 export default app;
