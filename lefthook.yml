@@ -42,6 +42,10 @@
 #       runner: go run
 pre-commit:
   commands:
+    build:
+     run: npm run build
     biome:
       glob: "*.{js,ts,jsx,tsx}"
       run: npx @biomejs/biome check --write ./src
+    test-fib-api:
+      run: npm run test
