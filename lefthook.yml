@@ -42,6 +42,8 @@
 #       runner: go run
 pre-commit:
   commands:
+    build:
+     run: npm run build
     biome:
       glob: "*.{js,ts,jsx,tsx}"
       run: npx @biomejs/biome check --write ./src
