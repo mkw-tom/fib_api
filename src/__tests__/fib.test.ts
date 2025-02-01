@@ -15,21 +15,7 @@ describe("GET /fib", () => {
 			"The request value is invalid. The request value must be alphanumeric.",
 		);
 	});
-
-	it("success", async () => {
-		const res = await request(app).get("/fib?n=55");
-		expect(res.status).toBe(200);
-		expect(res.body).toEqual({ result: "139583862445" });
-	});
-
-	it("invalid value", async () => {
-		const res = await request(app).get("/fib?n=i4");
-		expect(res.status).toBe(400);
-		expect(res.text).toBe(
-			"The request value is invalid. The request value must be alphanumeric.",
-		);
-	});
-
+	
 	it("invalid value for only '0", async () => {
 		const res = await request(app).get("/fib?n=000");
 		expect(res.status).toBe(400);
